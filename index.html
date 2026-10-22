@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vishwakarandak '26 — Let's Play, Compete & Make Memories!</title>
+<meta name="description" content="Explore every Vishwakarandak '26 event — arts, performing arts, gaming, LitBiz, team events, sports and technical — with codes, entry fees and registration steps.">
+<meta property="og:title" content="Vishwakarandak '26">
+<meta property="og:description" content="Let's play, compete & make memories! Explore events, fees and how to register.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0a0d">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#events">Skip to events</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="brand" aria-label="Vishwakarandak '26 home"><img src="assets/logo.svg" alt="" width="34" height="34"><span>VISHWAKARANDAK<b>'26</b></span></a>
+    <nav aria-label="Primary"><ul class="nav-links">
+      <li><a href="#home">Home</a></li><li><a href="#events">Explore Events</a></li><li><a href="#zones">Event Zones</a></li>
+      <li><a href="#register">Registration Guide</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+  <div class="drawer" id="drawer">
+    <a href="#home">Home</a><a href="#events">Explore Events</a><a href="#zones">Event Zones</a><a href="#register">Registration Guide</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span><span class="grid-lines"></span></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow h-anim" style="--d:0ms"><span class="dot"></span>The college festival · Edition 2026</p>
+    <h1 class="wordmark h-anim" style="--d:80ms"><span>VISHWA</span><span>KARANDAK<em>'26</em></span></h1>
+    <p class="tagline h-anim" style="--d:160ms">LET'S PLAY, COMPETE &amp; MAKE MEMORIES!</p>
+    <p class="lead h-anim" style="--d:220ms">Competitions, workshops, sports, gaming, performances and creative showdowns — <strong id="statEvents"></strong> events across seven zones. Find yours.</p>
+    <div class="ctas h-anim" style="--d:280ms"><a class="btn primary" href="#events">EXPLORE EVENTS</a><a class="btn ghost" href="#register">HOW TO REGISTER</a></div>
+    <div class="hero-zones h-anim" style="--d:340ms" id="heroZones" aria-label="Seven event zones"></div>
+  </div>
+  <a href="#zones" class="scroll-ind" aria-label="Scroll to event zones"><span></span></a>
+</section>
+
+<section class="sec" id="zones">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">01 — Event Zones</p><h2>Seven zones.<br><span class="grad">Pick your arena.</span></h2><p class="muted">Tap any zone to see every event, its code and entry fee.</p></div>
+    <div class="zone-grid" id="zoneGrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="events">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">02 — Explore Events</p><h2>The full <span class="grad">directory.</span></h2></div>
+    <div class="filters glass">
+      <div class="search"><label for="q" class="sr">Search events by name or code</label>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search by event name or code (e.g. BGMI, S 12, Tech 08)" autocomplete="off"></div>
+      <div class="frow">
+        <label><span>Zone</span><select id="fZone"></select></label>
+        <label><span>Entry fee</span><select id="fPrice"><option value="">Any fee</option><option value="0-50">Up to ₹50</option><option value="51-100">₹51 – ₹100</option><option value="101-250">₹101 – ₹250</option><option value="251-99999">Above ₹250</option></select></label>
+        <label><span>Format</span><select id="fFormat"><option value="">All formats</option><option value="individual">Individual</option><option value="team">Team</option><option value="unknown">Format not specified</option></select></label>
+        <label><span>Sort</span><select id="fSort"><option value="default">Event code</option><option value="name">Name (A–Z)</option><option value="low">Lowest fee</option><option value="high">Highest fee</option></select></label>
+        <label class="check"><input type="checkbox" id="fFav"><span>Saved only</span></label>
+        <button class="btn small ghost" data-clear>Clear all</button>
+      </div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="event-grid" id="eventGrid"></div>
+    <div class="empty" id="empty" hidden><p class="big">No events match.</p><p class="muted">Try a shorter word, a code like “EC 14”, or clear your filters.</p><button class="btn small primary" data-clear>Clear filters</button></div>
+    <p class="note muted">Format is shown only where it's clear from the event name; others are marked “Format TBA” — confirm with the registration coordinator.</p>
+    <div class="pass-card reveal"><div><p class="eyebrow">Technical Event Pass</p><h3>One pass. Every tech event.</h3><p class="muted">The Technical Event Pass ensures individual entry into all technical events. For team events, every member of the team must hold a pass. It's a separate registration option, not a Tech-coded event.</p></div><span class="fee xl">₹180</span></div>
+  </div>
+</section>
+
+<section class="sec" id="register">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">03 — Registration Guide</p><h2>Register in <span class="grad">minutes.</span></h2></div>
+    <div class="reg-types">
+      <div class="rt glass reveal"><span class="pill">Individual events</span><h3>Register &amp; pay right away</h3><p class="muted">Going solo? You can register and pay immediately.</p></div>
+      <div class="rt glass reveal"><span class="pill alt">Team events</span><h3>Get your squad ready first</h3><ul><li>Have your <b>complete team/group</b> ready before registering.</li><li>The listed fee is for the <b>entire team</b>, not per member.</li><li>Coordinate with teammates and <b>contact the registration coordinator</b> before registering.</li></ul></div>
+    </div>
+    <h3 class="steps-title reveal">How to pay</h3>
+    <ol class="steps">
+      <li class="reveal"><b>01</b><span>Visit the <span data-vierp>VIERP website</span></span></li>
+      <li class="reveal"><b>02</b><span>Select <strong>Events</strong></span></li>
+      <li class="reveal"><b>03</b><span>Choose <strong>Vishwakarandak</strong></span></li>
+      <li class="reveal"><b>04</b><span>Open <strong>Event Fee</strong></span></li>
+      <li class="reveal"><b>05</b><span>Select the right <strong>event / sport code</strong></span></li>
+      <li class="reveal"><b>06</b><span>Complete the <strong>payment</strong></span></li>
+    </ol>
+    <div class="after glass reveal"><strong>After payment →</strong> send a screenshot of your payment receipt or confirmation, along with your <b>name</b> and <b>event code</b>, to the registration coordinator at <a href="tel:+919892932711">9892932711</a>.</div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact glass reveal">
+      <p class="eyebrow">04 — Contact</p>
+      <h2>Contact for registration <span class="grad">and queries</span></h2>
+      <a class="phone" href="tel:+919892932711">98929 32711</a>
+      <div class="ctas"><a class="btn primary" href="tel:+919892932711">Call 9892932711</a><a class="btn ghost" href="https://wa.me/919892932711" target="_blank" rel="noopener">Open chat on WhatsApp</a></div>
+      <p class="muted small">WhatsApp opens a new chat with +91 98929 32711 — nothing is sent until you send it.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap"><span>VISHWAKARANDAK '26</span><span class="muted">Let's play, compete &amp; make memories! · <span id="yr"></span></span></div></footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="scrim" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="mhead">
+      <span class="mico" id="mIco"></span>
+      <div><p class="eyebrow" id="mTag"></p><h2 id="mTitle"></h2><p class="muted" id="mCount"></p></div>
+      <button class="x" id="mClose" data-close aria-label="Close zone">✕</button>
+    </div>
+    <div class="search sm"><label for="mq" class="sr">Search in this zone</label><input id="mq" type="search" placeholder="Filter this zone…" autocomplete="off"></div>
+    <ul class="mlist" id="mList"></ul>
+    <div class="mpass" id="mPass" hidden></div>
+    <div class="mfoot"><a class="btn primary" href="#register" data-goreg>How to register &amp; pay</a><button class="btn ghost" data-close>Close</button></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
